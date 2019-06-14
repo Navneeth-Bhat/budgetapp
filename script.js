@@ -78,7 +78,6 @@ return{
 })();
 //2.UIController
 var UIController = (function (app){
-// apply the DRY principle here and replace the repeated values by variables declared below
 var DOMstrings = {
     inputType : ".add__type",
     inputDes : ".add__description",
@@ -157,7 +156,6 @@ var AppController = (function (budgetCtrl,uiCtrl){
     var ctrlAddItem = function(){
         var input = uiCtrl.getInput();
         console.log(input);
-        //input.description what is if condition
         if(input.description && !isNaN(input.value) && input.value > 0){
         var newItem = budgetCtrl.addItem(input.type,input.description,input.value);
         uiCtrl.addListItem(newItem,input.type);
@@ -168,7 +166,6 @@ var AppController = (function (budgetCtrl,uiCtrl){
     }
 }
     var ctrlDelete = function(event){
-        //parent node etc?
         console.log(event.target.parentNode.parentNode.parentNode.parentNode.id);
         uiCtrl.deleteItem();
         budgetCtrl.deleteItem();
